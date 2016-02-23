@@ -1,0 +1,19 @@
+
+machine:
+  timezone:
+    America/Denver
+  node:
+    version: 5
+dependencies:
+  pre:
+    - rm -rf node_modules/
+test:
+  override:
+    - npm run ci
+deployment:
+  release:
+    tag: /v.*/
+    owner: LeisureLink
+    commands:
+      - echo -e "$NPM_USERNAME\n$NPM_PASSWORD\n$NPM_EMAIL" | npm login
+      - npm publish

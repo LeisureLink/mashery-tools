@@ -1,0 +1,43 @@
+{
+  "name": "mashery-tools",
+  "version": "1.0.0",
+  "description": "Mashery reporting and tooling against the api",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "npm run build",
+    "test": "_mocha test",
+    "lint": "esw --quiet",
+    "build": "babel src -d build",
+    "prepublish": "npm run build",
+    "coverage": "istanbul cover npm test",
+    "ci": "npm run lint && npm run coverage",
+    "clean": "trash ./build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeisureLink/mashery-tools.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LeisureLink/mashery-tools/issues"
+  },
+  "homepage": "https://github.com/LeisureLink/mashery-tools#readme",
+  "devDependencies": {
+    "babel-eslint": "^5.0.0",
+    "babel-preset-pundits": "^1.0.2",
+    "code": "^2.1.0",
+    "eslint": "^2.2.0",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "mochawait": "^2.0.1",
+    "trash-cli": "^1.2.1"
+  },
+  "dependencies": {
+    "lodash": "^4.5.1",
+    "moment": "^2.11.2",
+    "qs": "^6.1.0",
+    "wreck": "^7.0.0"
+  }
+}
